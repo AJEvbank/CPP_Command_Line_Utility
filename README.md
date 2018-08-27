@@ -42,4 +42,10 @@ There are several important items to note.
 
 First, values which are not required for specific options are required for the
 program as a whole. For both types of values, if they are expected, the
-programmer must specify where they should appear relative to the option.
+programmer must specify where they should appear relative to the option. This
+should be given in terms of an offset index. The default is 1 which means that
+the expected value should be the argument immediately following the option or
+the program name (argument 0 on the command line).
+
+Second, because options may themselves have options, each option will have a
+set data structure just like the main program. 
