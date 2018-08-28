@@ -81,15 +81,15 @@ CLO. It can also be called on options themselves to access their existing
 options. Does not create new option if given option does not exist. Note that
 options are identified without the prefix.
 
-bool set_prefix_single() : returns true if successful. Throws appropriate error
+[Done] void set_prefix_single() : returns true if successful. Throws appropriate error
 otherwise. Tells CLO to read a string prefixed with a single minus sign as an
 option.
 
-bool set_prefix_double() : returns true if successful. Throws appropriate error
+[Done] void set_prefix_double() : returns true if successful. Throws appropriate error
 otherwise. Tells CLO to read a string prefixed with two minus signs as an
 option.
 
-bool set_prefix_both() : returns true if successful. Throws appropriate error
+[Done] void set_prefix_both() : returns true if successful. Throws appropriate error
 otherwise. Tells CLO to read a string prefixed with either a single minus sign
 or two minus signs as an option.
 
@@ -104,7 +104,7 @@ read as a value.
 
 The standard processing operations of the CLO class include:
 
-bool get_command_line(int,char**) : returns true if successful. Throws
+[Done] void get_command_line(int,char**) : returns true if successful. Throws
 appropriate error otherwise. This sets the internal state of the CLO object to
 read from the main program's command line arguments. Expects the standard argc
 and argv as parameters.
