@@ -50,9 +50,11 @@ the program name (argument 0 on the command line).
 Second, because options may themselves have options, each option will have a
 set data structure just like the main program.
 
-Third, the programmer should work only with the Command Line Option (CLO) class
-using some standard operations such as adding an option or expected value to
-the set of valid arguments. The standard operations of the CLO class include:
+Third, the programmer should work only with the Command Line Operation (CLO)
+class using some standard operations such as adding an option or expected value
+to the set of valid arguments.
+
+The standard set-up operations of the CLO class include:
 
 bool add_expected_value(string,size_t) : returns true if successful. Throws
 appropriate error otherwise. Expects a string indicating the existing option to
@@ -78,3 +80,44 @@ added to options, this method gives the programmer access to options within the
 CLO. It can also be called on options themselves to access their existing
 options. Does not create new option if given option does not exist. Note that
 options are identified without the prefix.
+
+bool set_prefix_single() : returns true if successful. Throws appropriate error
+otherwise. Tells CLO to read a string prefixed with a single minus sign as an
+option.
+
+bool set_prefix_double() : returns true if successful. Throws appropriate error
+otherwise. Tells CLO to read a string prefixed with two minus signs as an
+option.
+
+bool set_prefix_both() : returns true if successful. Throws appropriate error
+otherwise. Tells CLO to read a string prefixed with either a single minus sign
+or two minus signs as an option.
+
+Errors:
+
+UnknownOption() : thrown when an option is not in the relevant option set
+ExpectedValueMissing() : thrown when an expected value is not found
+UnassociatedValue() : thrown when a non-option argument is found with no
+                    association to an option or to the program
+Note: Any argument regardless of prefix in the position of an expected value is
+read as a value.
+
+The standard processing operations of the CLO class include:
+
+bool get_command_line(int,char**) : returns true if successful. Throws
+appropriate error otherwise. This sets the internal state of the CLO object to
+read from the main program's command line arguments. Expects the standard argc
+and argv as parameters.
+
+bool process_command_line() : returns true if reaches end of command line
+arguments. Throws appropriate error otherwise. This creates the internal valid
+argument sequence. If an error is thrown, the internal state of the iterators
+is preserved, allowing the program to continue the process from the next
+argument, if the last argument has not been reached. Expects argc and argv from
+the command line. Call the method again to continue the operation after an
+error is thrown.
+
+Argument get_next_argument() : returns a copy of the next argument in the
+sequence of valid arguments generated from the process_command_line method.
+Note that until process_command_line has finished, get_next_argument cannot be
+called.
