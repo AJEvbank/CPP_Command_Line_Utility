@@ -8,8 +8,14 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="CommLineOps.cpp"/>
-    <File Name="CommLineOps.h"/>
+    <VirtualDirectory Name="args">
+      <File Name="Argument.h" ExcludeProjConfig="Debug;"/>
+      <File Name="Argument.cpp" ExcludeProjConfig="Debug;"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="clo">
+      <File Name="CommLineOps.h"/>
+      <File Name="CommLineOps.cpp"/>
+    </VirtualDirectory>
     <File Name="main.cpp"/>
   </VirtualDirectory>
   <Settings Type="Executable">
