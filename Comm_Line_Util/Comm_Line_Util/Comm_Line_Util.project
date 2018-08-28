@@ -8,6 +8,11 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <VirtualDirectory Name="special_exceptions"/>
+    <VirtualDirectory Name="rule">
+      <File Name="ArgumentRule.h"/>
+      <File Name="ArgumentRule.cpp"/>
+    </VirtualDirectory>
     <VirtualDirectory Name="args">
       <File Name="Argument.h" ExcludeProjConfig="Debug;"/>
       <File Name="Argument.cpp" ExcludeProjConfig="Debug;"/>

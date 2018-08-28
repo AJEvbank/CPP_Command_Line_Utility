@@ -17,7 +17,7 @@ private:
     std::string prefix;
     bool both;
 //    std::set<Argument> Arguments;
-//    std::set<Rules> Rules;
+//    std::set<ArgumentRule> Rules;
     
 
 public:

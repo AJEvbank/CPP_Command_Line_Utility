@@ -9,8 +9,8 @@ class Argument
 {
 private:
     std::string name;
-    std::list<Argument> required_values;
-    std::set<Argument> args;
+    std::list<Argument> values;
+    std::list<Argument> args;
 public:
     Argument(std::string name);
     virtual ~Argument() = default;

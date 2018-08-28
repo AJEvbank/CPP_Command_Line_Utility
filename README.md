@@ -56,20 +56,28 @@ to the set of valid arguments.
 
 The standard set-up operations of the CLO class include:
 
-bool add_expected_value(string,size_t) : returns true if successful. Throws
+bool add_expected_value(string) : returns true if successful. Throws
 appropriate error otherwise. Expects a string indicating the existing option to
 which the expected value should be added, otherwise main program is assumed
-vis-a-vis overloading. Expects a size_t which indicates where the expected
-value should be located in a command line. Class maintains a size_t which is
-incremented whether an argument is supplied or not.
+vis-a-vis overloading. Class maintains a size_t which is incremented whether an
+argument is supplied or not.
 
-bool add_optional_value(string,size_t) : returns true if successful. Throws
+bool add_optional_value(string) : returns true if successful. Throws
 appropriate error otherwise. Similar to previous, but value is only assessed if
-the argument at the given location (size_t) is not an option. This means that
-if the argument at the assumed location has the option prefix ('-' or '--'),
-then it is assumed that the user has not supplied the optional value. Note that
-the class will not allow the programmer to have more that one value at the same
-location
+the argument at the given location is not an option. This means that if the
+argument at the assumed location has the option prefix ('-' or '--'), then it
+is assumed that the user has not supplied the optional value. Note that the
+class will not allow the programmer to have more that one value at the same
+location.
+
+Note: Expected values must be added before optional values. The positions of
+the arguments are set in the order in which they are added. When an argument is
+being analyzed, its required values are checked first, then its optional values.
+If when analyzing optional values, an option is encountered, no more optional
+values are no longer analyzed. Options are assumed until an invalid option is
+encountered. When this occurs, the invalid option must be checked in the next
+higher scope until either it is determined to be a universally invalid option
+or it is discovered to be a valid option of a higher option scope.
 
 bool add_option(string) : returns true if successful. Throws appropriate error
 otherwise. This simply adds an option to the set of options for the CLO. It

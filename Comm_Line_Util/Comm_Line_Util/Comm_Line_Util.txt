@@ -1,1 +1,1 @@
-./Debug/CommLineOps.cpp.o ./Debug/main.cpp.o   
+./Debug/ArgumentRule.cpp.o ./Debug/main.cpp.o ./Debug/CommLineOps.cpp.o   

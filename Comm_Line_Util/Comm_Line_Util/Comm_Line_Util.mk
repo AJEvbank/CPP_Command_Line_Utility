@@ -62,7 +62,7 @@ AS       := C:/MinGW/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/ArgumentRule.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) 
 
 
 
@@ -93,13 +93,13 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix): CommLineOps.cpp $(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/OneDrive/OneDrive/Documents/personal_repositories/CPP_Command_Line_Utility/CPP_Command_Line_Utility/Comm_Line_Util/Comm_Line_Util/CommLineOps.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix): CommLineOps.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix) -MM CommLineOps.cpp
+$(IntermediateDirectory)/ArgumentRule.cpp$(ObjectSuffix): ArgumentRule.cpp $(IntermediateDirectory)/ArgumentRule.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/OneDrive/OneDrive/Documents/personal_repositories/CPP_Command_Line_Utility/CPP_Command_Line_Utility/Comm_Line_Util/Comm_Line_Util/ArgumentRule.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/ArgumentRule.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/ArgumentRule.cpp$(DependSuffix): ArgumentRule.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/ArgumentRule.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/ArgumentRule.cpp$(DependSuffix) -MM ArgumentRule.cpp
 
-$(IntermediateDirectory)/CommLineOps.cpp$(PreprocessSuffix): CommLineOps.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/CommLineOps.cpp$(PreprocessSuffix) CommLineOps.cpp
+$(IntermediateDirectory)/ArgumentRule.cpp$(PreprocessSuffix): ArgumentRule.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/ArgumentRule.cpp$(PreprocessSuffix) ArgumentRule.cpp
 
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp $(IntermediateDirectory)/main.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/OneDrive/OneDrive/Documents/personal_repositories/CPP_Command_Line_Utility/CPP_Command_Line_Utility/Comm_Line_Util/Comm_Line_Util/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
@@ -108,6 +108,14 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
+
+$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix): CommLineOps.cpp $(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "D:/OneDrive/OneDrive/Documents/personal_repositories/CPP_Command_Line_Utility/CPP_Command_Line_Utility/Comm_Line_Util/Comm_Line_Util/CommLineOps.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix): CommLineOps.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/CommLineOps.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/CommLineOps.cpp$(DependSuffix) -MM CommLineOps.cpp
+
+$(IntermediateDirectory)/CommLineOps.cpp$(PreprocessSuffix): CommLineOps.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/CommLineOps.cpp$(PreprocessSuffix) CommLineOps.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

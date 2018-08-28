@@ -2,7 +2,7 @@
 
 std::ostream &operator<<(std::ostream &os, CommLineOps &rhs) {
     if (rhs.both == false)
-        os << rhs.argv << " with " << rhs.argc << " args and prefix: " << rhs.prefix;
+        os << "[ Argv: " << rhs.argv << " with " << rhs.argc << " args and prefix: " << rhs.prefix << " ]";
     else
         os << rhs.argv << " with " << rhs.argc << " args and both: " << rhs.both;
     return os;
