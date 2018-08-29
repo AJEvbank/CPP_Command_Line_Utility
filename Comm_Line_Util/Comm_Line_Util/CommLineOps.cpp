@@ -20,7 +20,7 @@ void CommLineOps::get_command_line(int argc, char ** argv) {
 
 void CommLineOps::print_command_line() {
     for (auto str: args) {
-        std::cout << str << std::endl;
+        std::cout << str << " ";
     }
 }
 
@@ -44,3 +44,17 @@ void CommLineOps::set_prefix_both()
     return;
 }
 
+void CommLineOps::add_rule(std::string name)
+{
+    Rules.add_option(name);
+    return;
+}
+
+void CommLineOps::display_full_structure()
+{
+    std::cout << *this << std::endl;
+    this->print_command_line();
+    std::cout << std::endl;
+    Rules.recursive_display(0,10);
+    return;
+}

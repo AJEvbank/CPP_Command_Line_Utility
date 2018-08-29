@@ -4,8 +4,8 @@
 #include <iostream>
 #include <exception>
 #include <list>
-#include <set>
 #include <string>
+#include "ArgumentRule.h"
 
 class CommLineOps {
     friend std::ostream &operator<<(std::ostream &os, CommLineOps &rhs);
@@ -17,12 +17,12 @@ private:
     std::string prefix;
     bool both;
 //    std::set<Argument> Arguments;
-//    std::set<ArgumentRule> Rules;
+    ArgumentRule Rules;
     
 
 public:
-    CommLineOps() : argv {nullptr}, argc {0}, prefix {"-"}, both {false} {};
-    CommLineOps(int argc, char ** argv) : argv {argv}, argc {argc}, prefix {"-"}, both {false} {
+    CommLineOps() : argv {nullptr}, argc {0}, prefix {"-"}, both {false}, Rules {"__Rules__"} {};
+    CommLineOps(int argc, char ** argv) : argv {argv}, argc {argc}, prefix {"-"}, both {false}, Rules {"__Rules__"} {
         for(size_t i {0}; i < static_cast<size_t>(this->argc); i++) {
             this->args.emplace_back(std::string(argv[i]));
         }
@@ -31,12 +31,16 @@ public:
     virtual ~CommLineOps() = default;
     
     virtual void get_command_line(int argc, char ** argv);
-    virtual void print_command_line();
     virtual void set_prefix_single();
     virtual void set_prefix_double();
     virtual void set_prefix_both();
     
+    virtual void add_rule(std::string name);
+    virtual void add_required_value();
+    virtual void add_optional_value();
     
+    virtual void print_command_line();
+    virtual void display_full_structure(); // This will progress as the structures are built.
 
 };
 

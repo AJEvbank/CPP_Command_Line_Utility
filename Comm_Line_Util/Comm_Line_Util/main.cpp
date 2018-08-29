@@ -7,11 +7,11 @@ int main(int argc, char** argv) {
     std::cout << "Hello, world!" << std::endl;
     
     CommLineOps clo {argc,argv};
-    std::cout << clo << std::endl;
-    clo.print_command_line();
+    clo.display_full_structure();
     
-    ArgumentRule newArgRule {"jump"};
-    std::cout << newArgRule << std::endl;
+    clo.add_rule(name);
+    
+    
     
     std::cout << std::endl << std::endl;
     return 0;
