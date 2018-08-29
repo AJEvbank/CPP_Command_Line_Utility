@@ -64,7 +64,10 @@ bool ArgumentRule::operator==(ArgumentRule &rhs)
 
 void ArgumentRule::add_option(std::string name)
 {
-    options.emplace(name,ArgumentRule(name));
+    options.emplace(std::make_pair(name,ArgumentRule(name)));
+//    ArgumentRule temp = ArgumentRule(name);
+//    options.insert(std::pair<std::string,ArgumentRule>(name,ArgumentRule(name)));
+    return;
 }
 
 ArgumentRule &ArgumentRule::get_option(std::string name)

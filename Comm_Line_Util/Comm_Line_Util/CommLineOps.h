@@ -16,6 +16,7 @@ private:
     std::list<std::string>::iterator itr;
     std::string prefix;
     bool both;
+//    ArgumentRule& temp;
 //    std::set<Argument> Arguments;
     ArgumentRule Rules;
     

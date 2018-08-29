@@ -18,6 +18,7 @@ private:
     std::list<size_t> required_values;
     std::list<size_t> optional_values;
     std::map<std::string, ArgumentRule> options;
+//    ArgumentRule& temp;
     
 public:
     ArgumentRule(std::string name) : name {name}, value_position {1} {}
