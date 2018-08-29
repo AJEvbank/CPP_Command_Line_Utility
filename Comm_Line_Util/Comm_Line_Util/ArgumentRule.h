@@ -17,7 +17,7 @@ private:
     size_t value_position;
     std::list<size_t> required_values;
     std::list<size_t> optional_values;
-    std::multimap<std::string, ArgumentRule> options;
+    std::map<std::string, ArgumentRule> options;
     
 public:
     ArgumentRule(std::string name) : name {name}, value_position {1} {}
@@ -32,7 +32,7 @@ public:
     virtual bool operator==(ArgumentRule &rhs);
     
     virtual void add_option(std::string name);
-    virtual std::multimap<std::string,ArgumentRule>::iterator get_option(std::string name);
+    virtual ArgumentRule &get_option(std::string name);
     
     virtual void print_all_arguments();
     virtual void recursive_display(unsigned level, unsigned field_width);

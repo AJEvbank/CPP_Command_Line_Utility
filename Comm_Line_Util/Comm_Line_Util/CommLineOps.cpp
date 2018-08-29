@@ -44,17 +44,26 @@ void CommLineOps::set_prefix_both()
     return;
 }
 
-void CommLineOps::add_rule(std::string name)
-{
-    Rules.add_option(name);
-    return;
-}
-
 void CommLineOps::display_full_structure()
 {
     std::cout << *this << std::endl;
     this->print_command_line();
     std::cout << std::endl;
-    Rules.recursive_display(0,10);
+    Rules.recursive_display(0,20);
     return;
+}
+
+void CommLineOps::add_required_value()
+{
+    this->Rules.add_expected_value();
+}
+
+void CommLineOps::add_optional_value()
+{
+    this->Rules.add_optional_value();
+}
+
+ArgumentRule& CommLineOps::get_rules()
+{
+    return this->Rules;
 }

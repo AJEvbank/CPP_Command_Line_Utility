@@ -35,9 +35,9 @@ public:
     virtual void set_prefix_double();
     virtual void set_prefix_both();
     
-    virtual void add_rule(std::string name);
     virtual void add_required_value();
     virtual void add_optional_value();
+    virtual ArgumentRule &get_rules();
     
     virtual void print_command_line();
     virtual void display_full_structure(); // This will progress as the structures are built.

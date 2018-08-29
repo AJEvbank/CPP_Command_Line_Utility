@@ -67,11 +67,11 @@ void ArgumentRule::add_option(std::string name)
     options.emplace(name,ArgumentRule(name));
 }
 
-std::multimap<std::string,ArgumentRule>::iterator ArgumentRule::get_option(std::string name)
+ArgumentRule &ArgumentRule::get_option(std::string name)
 {   
-    std::multimap<std::string,ArgumentRule>::iterator test = options.find(name);
-    if (test != options.end())
-        return test;
+    std::map<std::string,ArgumentRule>::iterator test = options.find(name);
+    if (test != options.end())        
+        return (*test).second;
     else 
         // TODO: Make special exception type.
         throw std::exception();
@@ -87,7 +87,7 @@ void ArgumentRule::print_all_arguments()
     for (auto item: optional_values)
         std::cout << item << ", ";
     std::cout << std::endl;
-    std::multimap<std::string,ArgumentRule>::iterator itr_temp {options.begin()};
+    std::map<std::string,ArgumentRule>::iterator itr_temp {options.begin()};
     for (;itr_temp != options.end();itr_temp++)
         std::cout << (*itr_temp).first << "[ "<< (*itr_temp).second << " ], ";
     std::cout << std::endl;
@@ -95,9 +95,9 @@ void ArgumentRule::print_all_arguments()
 
 void ArgumentRule::recursive_display(unsigned level, unsigned field_width)
 {
-    std::cout << "|" << std::setfill('-') << std::setw(field_width * level) << ">" << *this << std::endl;
+    std::cout << std::setfill(' ') << std::setw(field_width * level) << "" << *this << std::endl;
     std::cout << std::endl;
-    std::multimap<std::string, ArgumentRule>::iterator walker{ this->options.begin() };
+    std::map<std::string, ArgumentRule>::iterator walker{ this->options.begin() };
     for(; walker != this->options.end(); walker++)
         (*walker).second.recursive_display(level + 1, field_width);
     return;
