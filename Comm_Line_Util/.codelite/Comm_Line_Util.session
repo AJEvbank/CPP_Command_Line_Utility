@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util.workspace">
-  <int Value="0" Name="m_selectedTab"/>
+  <int Value="3" Name="m_selectedTab"/>
   <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util\main.cpp" Name="FileName"/>
-      <int Value="10" Name="FirstVisibleLine"/>
-      <int Value="29" Name="CurrentLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
+      <int Value="7" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util\CommLineOps.cpp" Name="FileName"/>
-      <int Value="51" Name="FirstVisibleLine"/>
-      <int Value="68" Name="CurrentLine"/>
+      <int Value="9" Name="FirstVisibleLine"/>
+      <int Value="27" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
-      <IntVector Name="CollapsedFolds"/>
+      <IntVector Name="CollapsedFolds">
+        <IntVectorItem Value="20"/>
+        <IntVectorItem Value="27"/>
+        <IntVectorItem Value="35"/>
+        <IntVectorItem Value="43"/>
+        <IntVectorItem Value="50"/>
+        <IntVectorItem Value="59"/>
+        <IntVectorItem Value="64"/>
+        <IntVectorItem Value="69"/>
+      </IntVector>
     </TabInfo>
     <TabInfo>
       <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util\CommLineOps.h" Name="FileName"/>
-      <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="19" Name="CurrentLine"/>
+      <int Value="18" Name="FirstVisibleLine"/>
+      <int Value="38" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util\ArgumentRule.cpp" Name="FileName"/>
-      <int Value="51" Name="FirstVisibleLine"/>
-      <int Value="66" Name="CurrentLine"/>
+      <int Value="30" Name="FirstVisibleLine"/>
+      <int Value="105" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds">
-        <IntVectorItem Value="83"/>
+        <IntVectorItem Value="3"/>
+        <IntVectorItem Value="15"/>
+        <IntVectorItem Value="27"/>
+        <IntVectorItem Value="39"/>
+        <IntVectorItem Value="47"/>
+        <IntVectorItem Value="55"/>
+        <IntVectorItem Value="60"/>
+        <IntVectorItem Value="65"/>
+        <IntVectorItem Value="71"/>
+        <IntVectorItem Value="80"/>
+        <IntVectorItem Value="90"/>
+        <IntVectorItem Value="116"/>
+        <IntVectorItem Value="126"/>
+        <IntVectorItem Value="136"/>
       </IntVector>
     </TabInfo>
     <TabInfo>
       <wxString Value="D:\OneDrive\OneDrive\Documents\personal_repositories\CPP_Command_Line_Utility\CPP_Command_Line_Utility\Comm_Line_Util\Comm_Line_Util\ArgumentRule.h" Name="FileName"/>
-      <int Value="6" Name="FirstVisibleLine"/>
-      <int Value="21" Name="CurrentLine"/>
+      <int Value="12" Name="FirstVisibleLine"/>
+      <int Value="26" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>

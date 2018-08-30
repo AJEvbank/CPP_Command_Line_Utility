@@ -30,4 +30,12 @@ There should be an argument tree on the sequence for every value or primary
 (top-level) option on the command line. The rule scope can be qualified by
 testing the name of the ArgumentRule. "__Rules__" is reserved.
 
-There are two separate algorithms for 
+There are two separate algorithms for processing the command line. There is a
+top level wrapper function for the CommLineOps class that calls the recursive
+function for the ArgumentRule class.
+
+Top Level Algorithm -
+
+
+
+Recursive Algorithm -
