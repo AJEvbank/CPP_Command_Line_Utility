@@ -6,7 +6,8 @@ int main(int argc, char** argv) {
     
     std::cout << "Hello, world!" << std::endl;
     
-    CommLineOps clo {argc,argv};
+    CommLineOps clo;
+    clo.get_command_line(argc,argv);
     clo.display_full_structure();
     
     std::cout << std::endl << std::endl;
