@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     ArgumentRule& test = clo.get_rules().get_option(std::string("test_rule3")).get_option(std::string("test_rule7")).get_option(std::string("test_rule8"));
     test.add_expected_value();
     test.add_optional_value();
-    clo.get_rules().get_option(std::string("test_rule3")).get_option(std::string("test_rule7")).get_option(std::string("test_rule8")).add_option(std::string("test_rule9"));
+    clo.get_rules().get_option(std::string("test_rule3")).get_option(std::string("test_rule7")).get_option(std::string("test_rule8")).add_option("test_rule9");
     clo.display_full_structure();
     
     

@@ -33,6 +33,7 @@ public:
     virtual bool operator==(ArgumentRule &rhs);
     
     virtual void add_option(std::string name);
+    virtual void add_option(const char name []);
     virtual ArgumentRule &get_option(std::string name);
     
     virtual void print_all_arguments();
