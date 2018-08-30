@@ -28,6 +28,7 @@ void CommLineOps::set_prefix_single()
 {
     this->prefix = '-';
     this->both = false;
+    Rules.set_prefix_single();
     return;
 }
 
@@ -35,12 +36,14 @@ void CommLineOps::set_prefix_double()
 {
     this->prefix = "--";
     this->both = false;
+    Rules.set_prefix_double();
     return;
 }
 
 void CommLineOps::set_prefix_both()
 {
     this->both = true;
+    Rules.set_prefix_both();
     return;
 }
 

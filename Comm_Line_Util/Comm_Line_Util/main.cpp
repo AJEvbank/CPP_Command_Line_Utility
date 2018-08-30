@@ -5,6 +5,7 @@
 int main(int argc, char** argv) {
     
     std::cout << "Hello, world!" << std::endl;
+    std::cout << std::boolalpha;
     
     CommLineOps clo;
     clo.get_command_line(argc,argv);

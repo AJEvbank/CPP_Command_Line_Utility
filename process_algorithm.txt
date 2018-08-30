@@ -1,0 +1,33 @@
+Problem:
+
+Given: A set of rules contained in an ArgumentRule, an integer (argc), and a
+sequence of strings (argv).
+
+Do: Create a sequence of valid arguments of type Argument. If an invalid
+argument is encountered throw an appropriate error.
+
+Definitions:
+
+  rule scope - The current rule scope is the current rule under which an
+               argument is being examined.
+
+General -
+1. If the rule scope has any required values, enqueue each value after
+   validating it. If a value is invalid, throw an error. If there are insuffi-
+   cient arguments to fill the required values, throw an error. Test arguments
+   under this rule for only the specific number of required arguments.
+2. If the rule scope has any optional values, test each argument and if the
+   argument is not an option and is valid, enqueue the argument, else throw an
+   error. If the argument is an option, begin step 3. Test arguments under this
+   rule for only the specific number of optional arguments.
+3. If the rule scope has one or more options, test each argument to see if it
+   is valid under the rule scope. If it is, add it to the option set. If it is
+   not, throw an error. If the argument is not an option, throw an error. Test
+   only as many arguments as there are options in the current rule scope. When
+   all options have been added to the option set, return.
+
+There should be an argument tree on the sequence for every value or primary
+(top-level) option on the command line. The rule scope can be qualified by
+testing the name of the ArgumentRule. "__Rules__" is reserved.
+
+There are two separate algorithms for 

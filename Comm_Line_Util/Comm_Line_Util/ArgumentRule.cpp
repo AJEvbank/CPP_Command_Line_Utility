@@ -8,7 +8,7 @@ std::ostream &operator<<(std::ostream &os, ArgumentRule &rhs)
     os << " Opt: ";
     for (auto item: rhs.optional_values)
         os << item << ",";
-    os << " ]";
+    os << "prefix=(" << rhs.prefix << ") both=" << rhs.both << " ]";
     return os;
 }
 
@@ -64,13 +64,16 @@ bool ArgumentRule::operator==(ArgumentRule &rhs)
 
 void ArgumentRule::add_option(std::string name)
 {
-    options.emplace(std::make_pair(name,ArgumentRule(name)));
+    options.emplace(std::make_pair(name,ArgumentRule(name,prefix)));
     return;
 }
 
 void ArgumentRule::add_option(const char name [])
 {
-    options.emplace(std::make_pair(std::string(name),ArgumentRule(name)));
+    std::string temp = std::string(name);
+    if (temp == reserved_name)
+        throw std::exception();
+    options.emplace(std::make_pair(temp,ArgumentRule(name,prefix)));
     return;
 }
 
@@ -107,5 +110,34 @@ void ArgumentRule::recursive_display(unsigned level, unsigned field_width)
     std::map<std::string, ArgumentRule>::iterator walker{ this->options.begin() };
     for(; walker != this->options.end(); walker++)
         (*walker).second.recursive_display(level + 1, field_width);
+    return;
+}
+
+void ArgumentRule::set_prefix_single()
+{
+    prefix = "-";
+    both = false;
+    std::map<std::string, ArgumentRule>::iterator temp {options.begin()};
+    for (;temp != options.end(); temp++)
+        (*temp).second.set_prefix_single();
+    return;
+}
+
+void ArgumentRule::set_prefix_double()
+{
+    prefix = "--";
+    both = false;
+    std::map<std::string, ArgumentRule>::iterator temp {options.begin()};
+    for (;temp != options.end(); temp++)
+        (*temp).second.set_prefix_double();
+    return;
+}
+
+void ArgumentRule::set_prefix_both()
+{
+    both = true;
+    std::map<std::string, ArgumentRule>::iterator temp {options.begin()};
+    for (;temp != options.end(); temp++)
+        (*temp).second.set_prefix_both();
     return;
 }
